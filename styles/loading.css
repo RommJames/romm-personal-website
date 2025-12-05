@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Background glow animation */
+body {
+  background: radial-gradient(circle, #0d0d0d 60%, #000000 100%);
+  animation: bgPulse 7s infinite ease-in-out alternate;
+  font-family: "Merriweather Sans", sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+@keyframes bgPulse {
+  0% {
+    box-shadow: inset 0 0 120px rgba(247, 213, 64, 0.05);
+  }
+  100% {
+    box-shadow: inset 0 0 200px rgba(247, 213, 64, 0.13);
+  }
+}
+
+/* Main container */
+.loader-container {
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Galaxy canvas */
+#galaxy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+/* Pixel burst intro */
+.pixel-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #f3d241, #f26829);
+  box-shadow: 0 0 25px #f7d540;
+  transform: scale(0);
+  border-radius: 5px;
+  animation: burst 1.3s ease-out forwards;
+  z-index: -3;
+}
+
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(40);
+    opacity: 0;
+  }
+}
+
+/* Logo reveal */
+.logo-glow {
+  width: 120px;
+  margin-bottom: 25px;
+  opacity: 0;
+  animation: logoReveal 1.7s ease forwards;
+  animation-delay: 0.5s;
+  filter: drop-shadow(0 0 0px #f7d540);
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+    filter: drop-shadow(0 0 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px #f7d540);
+  }
+}
+
+/* Flying letter typewriter */
+.welcome-title h1 span {
+  display: inline-block;
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(40px) rotate(10deg);
+  animation: flyIn 0.6s ease forwards;
+}
+
+@keyframes flyIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+/* Sub text fade-in */
+.subtext {
+  opacity: 0;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #e3e3e3;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1.8s;
+}
+
+/* Combined appear + glow animation */
+@keyframes buttonAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(247, 213, 64, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(247, 213, 64, 0.8);
+  }
+}
+
+/* Enter button */
+.btn-wrapper {
+  opacity: 0;
+  animation: buttonAppear 1.5s ease forwards 3s;
+}
+
+#enter-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0d0d0d;
+  background: #f7d540;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: none;
+  animation: buttonGlow 2.5s ease-in-out infinite alternate 4.6s;
+}
+
+#enter-btn:hover {
+  animation: none !important;
+  transform: scale(1.08) !important;
+  background: #a58e26;
+  color: rgb(251, 247, 247);
+  box-shadow: 0 0 30px rgba(247, 213, 64, 0.9);
+  opacity: 0.9;
+}
+
+/* FadeIn general animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

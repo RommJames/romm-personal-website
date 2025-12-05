@@ -1,0 +1,155 @@
+/* ------------------------------ */
+/* PAGE LOAD ANIMATIONS */
+/* ------------------------------ */
+
+/* Fade + Slide Up */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade + Slide Down (for navbar) */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Soft Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pop In */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ------------------------------ */
+/* APPLY ANIMATIONS */
+/* ------------------------------ */
+
+nav {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+.hero-heading h1 {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-tags .tag {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+.hero-sub-title p {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.cta {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 1.3s;
+}
+
+/* Smooth appearance for hero container */
+.hero-banner-description {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Hero Banner */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* ================================ */
+/* SCROLL ANIMATION BASE STATE */
+/* ================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Title Glowing Text */
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 213, 0, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 213, 0, 0.7);
+  }
+}
+
+.hero-heading span.txt-yellow {
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+/* Skills Logo Animation */
+
+.skills img {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
