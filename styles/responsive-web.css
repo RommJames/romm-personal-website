@@ -1,0 +1,504 @@
+/* -----------------------------
+   GLOBAL RESPONSIVE ADJUSTMENTS
+------------------------------ */
+
+/* Keep padding consistent on small screens */
+section.about {
+  padding: 35px 20px;
+}
+
+/* Fix overscaling on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -----------------------------
+   NAVIGATION (Mobile Version)
+------------------------------ */
+
+@media (max-width: 850px) {
+  nav {
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  /* Hide nav links initially */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    display: none;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* HAMBURGER BUTTON */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .hamburger div {
+    width: 28px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  /* Show menu when toggled */
+  .nav-active {
+    display: flex !important;
+  }
+}
+
+/* Hidden hamburger for desktop */
+.hamburger {
+  display: none;
+}
+
+/* -----------------------------
+    HERO BANNER
+------------------------------ */
+@media (max-width: 768px) {
+  .hero-banner-content {
+    padding: 0 20px;
+    text-align: center;
+    background-attachment: scroll;
+  }
+
+  .hero-title {
+    padding: 15px;
+    border-width: 6px;
+  }
+
+  .hero-title h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-tags {
+    gap: 10px;
+  }
+
+  .tag {
+    padding: 5px 15px;
+    font-size: 0.85rem;
+  }
+
+  .my-floating-face {
+    height: 150px;
+  }
+}
+
+/* -----------------------------
+    CORE VALUES
+------------------------------ */
+@media (max-width: 900px) {
+  .core-value-cards {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .core-value-card {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+  }
+}
+
+/* -----------------------------
+    FEATURED CARDS
+------------------------------ */
+@media (max-width: 900px) {
+  .featured-card {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .card-caption {
+    -webkit-line-clamp: 5;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-tech span {
+    font-size: 0.75rem;
+  }
+}
+
+/* -----------------------------
+    SKILLS SECTION
+------------------------------ */
+@media (max-width: 768px) {
+  .skills-icons {
+    gap: 1.2rem;
+  }
+
+  .skills img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* -----------------------------
+    EXPLORE JOURNEY BUTTON
+------------------------------ */
+@media (max-width: 600px) {
+  .btn a {
+    min-width: 200px;
+    min-height: 45px;
+    font-size: 0.9rem;
+  }
+}
+
+/* -----------------------------
+    FOOTER
+------------------------------ */
+@media (max-width: 900px) {
+  footer {
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-main .links {
+    justify-content: center;
+  }
+}
+
+/* -----------------------------
+    PDF VIEWER RESPONSIVE
+------------------------------ */
+@media (max-width: 900px) {
+  .pdf-container {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .pdf-container {
+    height: 60vh;
+  }
+}
+
+/* -----------------------------
+    HOBBIES SECTION
+------------------------------ */
+@media (max-width: 900px) {
+  .hobbies-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hobbies-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   MOBILE NAVIGATION 
+   =========================== */
+@media (max-width: 900px) {
+  nav {
+    position: relative;
+  }
+
+  /* Convert nav container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hide dropdowns unless tapped */
+  .dropdown {
+    display: none !important;
+    position: static;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+
+  /* -----------------------
+     COLLAPSE NAV LINKS
+     ----------------------- */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    gap: 0;
+    padding: 10px 0;
+    display: none; /* hide on mobile */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  /* -----------------------
+     TAP-TO-OPEN MENU AREA
+     ----------------------- */
+  /* .navbar::after {
+    content: "\2630"; ☰ icon
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+  } */
+
+  /* -----------------------
+     CHECKBOX-FREE TOGGLE METHOD
+     When navbar is tapped, show menu
+     ----------------------- */
+  nav:focus-within .nav-links,
+  .navbar:active + .nav-links,
+  .nav-links:hover {
+    display: flex !important;
+  }
+
+  /* -----------------------
+     SHOW DROPDOWN NESTED ITEMS
+     ----------------------- */
+  .nav-links li:hover .dropdown {
+    display: flex !important;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 10px;
+  }
+
+  .dropdown a {
+    font-size: 0.95rem;
+    padding: 8px 0;
+  }
+}
+
+/* About */
+/* ================================
+   RESPONSIVE WEB FIXES
+   ================================ */
+
+/* ----- GLOBAL ----- */
+@media (max-width: 1024px) {
+  section {
+    padding: 40px 30px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ----- NAVBAR (Transform to mobile menu) ----- */
+
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    display: none;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* show menu when body has class 'nav-open' */
+  body.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .nav-links li:hover .dropdown {
+    display: none; /* disable hover dropdown */
+  }
+
+  /* mobile-friendly dropdown */
+  .nav-links li:active .dropdown,
+  .nav-links li:focus-within .dropdown {
+    display: block;
+  }
+}
+
+/* Add simple hamburger */
+@media (max-width: 900px) {
+  nav::after {
+    content: "☰";
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  nav:active ~ .nav-links,
+  nav:focus-within ~ .nav-links {
+    display: flex;
+  }
+}
+
+/* ----- HERO BANNER ----- */
+@media (max-width: 768px) {
+  .hero-banner-content {
+    background-attachment: scroll;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-tags {
+    gap: 10px;
+  }
+
+  .my-floating-face {
+    height: 140px;
+  }
+}
+
+/* ----- CARDS, GRID, SECTIONS ----- */
+
+@media (max-width: 900px) {
+  .core-value-card,
+  .featured-card,
+  .hobbies-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .core-value-cards,
+  .featured-cards-container,
+  .hobbies-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hobbies-cards {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
+/* ----- WHAT DRIVES ME CARDS ----- */
+
+@media (max-width: 768px) {
+  .what-drives-me-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* ----- FOOTER ----- */
+@media (max-width: 850px) {
+  footer {
+    padding: 30px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-main .links {
+    justify-content: center;
+  }
+}
+
+/* ===== RESPONSIVE FIX FOR MAIN + SECTION PADDING ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  main.about,
+  section.about {
+    padding: 35px 30px !important;
+  }
+
+  .what-drives-me-card {
+    width: 350px;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  main.about,
+  section.about {
+    padding: 25px 20px !important;
+  }
+
+  /* What Drives Me */
+  .what-drives-me-card {
+    width: 100%;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  main.about,
+  section.about {
+    padding: 20px 15px !important;
+  }
+}

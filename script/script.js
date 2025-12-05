@@ -40,3 +40,8 @@ function showMessage() {
 function hideMessage() {
   document.getElementById("messageBox").classList.add("hidden");
 }
+
+// Navbar
+document.querySelector("nav").addEventListener("click", () => {
+  document.body.classList.toggle("nav-open");
+});
